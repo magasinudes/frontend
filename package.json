@@ -1,7 +1,7 @@
 {
-  "name": "poc_pwa",
+  "name": "magasinudes",
   "version": "1.0.0",
-  "description": "PWA poc",
+  "description": "magasinudes",
   "main": "index.js",
   "author": "Jean-Francois Belisle <jean-francois.l.belisle@usherbrooke.ca>",
   "license": "MIT",
