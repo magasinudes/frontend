@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "$common/*": ["src/common/*"],
+      "$initializers/*": ["src/initializers/*"],
+      "$pages/*": ["src/pages/*"],
+      "$services/*": ["src/services/*"],
+      "$store/*": ["src/store/*"],
+      "$utils/*": ["src/utils/*"],
+      "$routes": ["src/routes.js"],
+    },
+  },
+  "exclude": ["node_modules", "build"],
+}
