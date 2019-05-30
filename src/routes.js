@@ -65,4 +65,14 @@ export default {
     // ------------
     cart: r("/my/cart"),
   }),
+
+  // --------------
+  // Resources
+  // --------------
+  resources: r("/resources", {
+    index: r("/resources"),
+    new: r("/resources/new"),
+    show: r(`/resources/:id(${/[0-9]+/})`),
+    edit: r(`/resources/:id(${/[0-9]+/})`),
+  }),
 };

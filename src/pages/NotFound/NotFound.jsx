@@ -1,5 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import Icon from "@material-ui/core/Icon";
+import SadFaceIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 import { AppContainer, AppContent, AppMain } from "$common";
 import withRouterShape from "$utils/withRouterShape";
 
@@ -28,6 +30,7 @@ class NotFound extends React.PureComponent {
           <AppMain>
             <div className="notFound">
               <div className="notFound-404">
+                <Icon className="notFound-404 icon-container"><SadFaceIcon className="icon" /></Icon>
                 <h1>404</h1>
               </div>
               <h2>Page non trouvée</h2>

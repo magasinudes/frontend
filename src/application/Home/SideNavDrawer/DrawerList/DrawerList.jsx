@@ -5,6 +5,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import OrderIcon from "@material-ui/icons/Assignment";
 import ReservationIcon from "@material-ui/icons/Bookmarks";
 import CartIcon from "@material-ui/icons/ShoppingCart";
+import ResourceIcon from "@material-ui/icons/Store";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -41,6 +42,15 @@ const DrawerList = () => {
             <ListItem button>
               <ListItemIcon><OrderIcon /></ListItemIcon>
               <ListItemText primary="Mes commandes" />
+            </ListItem>
+          </Link>
+        </List>
+        <Divider />
+        <List>
+          <Link to={r.resources()} className={classes.link}>
+            <ListItem button>
+              <ListItemIcon><ResourceIcon /></ListItemIcon>
+              <ListItemText primary="Ressources" />
             </ListItem>
           </Link>
         </List>
