@@ -3,7 +3,7 @@
   width: 100%;
   text-align: center;
   line-height: 1.4;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   padding: 0.5rem;
 }
 
@@ -16,6 +16,7 @@
   width: 100%;
   height: 100%;
   margin-bottom: 3rem;
+  margin-top: -1.5rem;
 }
 
 .notFound .notFound-404 .icon-container .icon {
@@ -63,6 +64,8 @@
   text-decoration: none;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  cursor: pointer;
+  -webkit-user-select: none;
 }
 
 .notFound a:hover {
