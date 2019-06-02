@@ -23,7 +23,7 @@ const CategoryCard = ({ category, outletId }) => {
       <Card
         className={classes.card}
         component={Link}
-        to={r.resources.index.outlet.category(
+        to={r.resources.outlet.category(
           { outletId, id: category.id },
         )}
       >

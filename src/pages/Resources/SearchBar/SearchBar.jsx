@@ -12,8 +12,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  campusOptions: [],
-  categoryOptions: [],
+  campusOptions: null,
+  categoryOptions: null,
   onChange: null,
 };
 
@@ -40,31 +40,35 @@ const SearchBar = ({ campusOptions, categoryOptions, onChange }) => {
 
   useEffect(() => {
     if (didMount) {
-      onChange("campus", campus);
+      onChange("campusId", campus);
     }
   }, [campus]);
 
   useEffect(() => {
     if (didMount) {
-      onChange("categoryType", categoryType);
+      onChange("categoryTypeId", categoryType);
     }
   }, [categoryType]);
 
   return (
     <div className={classes.root}>
       <SearchInput className={classes.search} placeholder="Rechercher une ressource" onSearch={value => setSearchQuery(value)} />
-      <SelectInput className={classes.selectCampus} value={campus} onChange={value => setCampus(value)}>
-        <option hidden value="">Sélectionner le campus</option>
-        {campusOptions.map(opt => (
-          <option key={opt.id} value={opt.id}>{opt.text}</option>
-        ))}
-      </SelectInput>
-      <SelectInput value={categoryType} onChange={value => setCategoryType(value)}>
-        <option hidden value="">Sélectionner le type de catégorie</option>
-        {categoryOptions.map(opt => (
-          <option key={opt.id} value={opt.id}>{opt.text}</option>
-        ))}
-      </SelectInput>
+      {campusOptions && (
+        <SelectInput className={classes.selectCampus} value={campus} onChange={value => setCampus(value)}>
+          <option hidden value="">Sélectionner le campus</option>
+          {campusOptions.map(opt => (
+            <option key={opt.id} value={opt.id}>{opt.text}</option>
+          ))}
+        </SelectInput>
+      )}
+      {categoryOptions && (
+        <SelectInput value={categoryType} onChange={value => setCategoryType(value)}>
+          <option hidden value="">Sélectionner le type de catégorie</option>
+          {categoryOptions.map(opt => (
+            <option key={opt.id} value={opt.id}>{opt.text}</option>
+          ))}
+        </SelectInput>
+      )}
     </div>
   );
 };

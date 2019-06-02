@@ -41,13 +41,13 @@ const CategoriesContainer = ({
   const title = outlet?.name || category?.name || "";
   let route;
   let outletId;
-  console.log(categories);
+
   if (outlet) {
     outletId = outlet.id;
-    route = r.resources.index.outlet.categories({ id: outlet.id });
+    route = r.resources.outlet.categories({ id: outlet.id });
   } else if (category) {
-    outletId = routerProps.match.params.outledId;
-    route = r.resources.index.outlet.category.categories({ outletId, id: category.id });
+    outletId = routerProps.match.params.outletId;
+    route = r.resources.outlet.category.categories({ outletId, id: category.id });
   }
 
   return (

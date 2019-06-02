@@ -1,8 +1,8 @@
 import React from "react";
 import { AppContainer, AppContent } from "$common";
 
-import SearchBar from "./SearchBar";
-import CategoriesContainer from "./CategoriesContainer";
+import SearchBar from "../SearchBar";
+import CategoriesContainer from "../CategoriesContainer";
 
 class Home extends React.PureComponent {
   constructor(props) {
