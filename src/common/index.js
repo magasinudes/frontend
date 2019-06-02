@@ -6,10 +6,16 @@ import {
   AppContent,
   AppMain,
 } from "./Layout";
+import TextInput from "./TextInput";
+import SearchInput from "./SearchInput";
+import SelectInput from "./SelectInput";
 
 export {
   AppContainer,
   AppContent,
   AppMain,
   FallbackSwitch,
+  SearchInput,
+  SelectInput,
+  TextInput,
 };
