@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/magasinudes-241416/frontend:latest', '.' ]
 images:
-- 'gcr.io/magasinudes/frontend:$COMMIT_SHA'
-- 'gcr.io/magasinudes/frontend:latest'
+- 'gcr.io/magasinudes-241416/frontend:$COMMIT_SHA'
+- 'gcr.io/magasinudes-241416/frontend:latest'
 tags:
 - "cloudbuild"
