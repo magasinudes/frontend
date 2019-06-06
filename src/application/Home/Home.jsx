@@ -6,6 +6,7 @@ import { FallbackSwitch } from "$common";
 import r from "$routes";
 
 import My from "$pages/My";
+import Resources from "$pages/Resources";
 import TopNav from "./TopNav";
 import SideNavDrawer from "./SideNavDrawer";
 
@@ -52,6 +53,7 @@ class Home extends React.PureComponent {
               )}
             />
             <Route path={r.my.path} component={My} />
+            <Route path={r.resources.path} component={Resources} />
           </FallbackSwitch>
         </div>
       </React.Fragment>

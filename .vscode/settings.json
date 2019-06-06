@@ -3,4 +3,5 @@
   "editor.acceptSuggestionOnEnter": "off",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+  "javascript.validate.enable" : false
 }
