@@ -14,6 +14,10 @@ const styles = theme => ({
       display: "none",
     },
   },
+  menuRightIcon: {
+    marginRight: theme.spacing(1),
+    marginLeft: "auto",
+  },
 });
 
 export default styles;

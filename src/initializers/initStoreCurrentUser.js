@@ -1,9 +1,7 @@
-import { users } from "$services/rest";
 import { setUser } from "$store/actions/user";
 
 const initCurrentUser = async (store) => {
-  const result = await users.me();
-  store.dispatch(setUser(result.user));
+  store.dispatch(setUser({ name: "Yoda", cip: "yoda9999" }));
 };
 
 export default initCurrentUser;

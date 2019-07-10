@@ -1,6 +1,9 @@
 # Magasin UdeS Frontend
 Single page application for the Magasin UdeS app. This application is a PWA.
 
+## Before run
+You need to install project dependecy `yarn install`.
+
 ## How to start the development server
 To start the development server, run `yarn dev`.
 
