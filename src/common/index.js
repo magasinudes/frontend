@@ -6,6 +6,7 @@ import {
   AppContent,
   AppMain,
 } from "./Layout";
+import Modal from "./Modal";
 import TextInput from "./TextInput";
 import SearchInput from "./SearchInput";
 import SelectInput from "./SelectInput";
@@ -15,6 +16,7 @@ export {
   AppContent,
   AppMain,
   FallbackSwitch,
+  Modal,
   SearchInput,
   SelectInput,
   TextInput,

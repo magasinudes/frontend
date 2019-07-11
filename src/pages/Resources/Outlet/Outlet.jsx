@@ -5,7 +5,6 @@ import r from "$routes";
 import withRouterShape from "$utils/withRouterShape";
 
 import Category from "./Category";
-import Categories from "./Categories";
 
 const propTypes = {
   ...withRouterShape,
@@ -14,9 +13,12 @@ const propTypes = {
 const Outlet = () => (
   <FallbackSwitch>
     {/* Category */}
-    <Route path={r.resources.outlet.category.path} component={Category} />
-    {/* Categories */}
-    <Route exact path={r.resources.outlet.categories.path} component={Categories} />
+    <Route
+      path={r.resources.outlet.category.path}
+      render={props => (
+        <Category key={props.match.params.id} {...props} />
+      )}
+    />
   </FallbackSwitch>
 );
 
