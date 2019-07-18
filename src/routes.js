@@ -72,9 +72,7 @@ export default {
   resources: r("/resources", {
     index: r("/resources"),
     outlet: r("/resources/outlet/:id([0-9]+)", {
-      categories: r("/resources/outlet/:id([0-9]+)/categories"),
       category: r("/resources/outlet/:outletId([0-9]+)/category/:id([0-9]+)", {
-        categories: r("/resources/outlet/:outletId([0-9]+)/category/:id([0-9]+)/categories"),
       }),
     }),
   }),

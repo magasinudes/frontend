@@ -22,10 +22,17 @@ const styles = theme => ({
     justifyContent: "center",
     alignItems: "center",
     textDecoration: "none",
+    textAlign: "center",
     color: "white",
+    cursor: "pointer",
     "&:hover": {
       backgroundColor: grey[500],
     },
+  },
+  addIcon: {
+    height: "6rem",
+    width: "6rem",
+    color: grey[600],
   },
 });
 
