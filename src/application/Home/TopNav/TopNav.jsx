@@ -8,6 +8,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
 
 import { connect } from "react-redux";
 import { setUser } from "$store/actions/user";
@@ -29,10 +30,23 @@ class TopNav extends React.PureComponent {
     this.state = {
       anchorEl: null,
       open: false,
+      login: true,
     };
 
     this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
     this.handleProfileMenuClose = this.handleProfileMenuClose.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  componentDidMount() {
+    const url = new URL(window.location.href);
+    const t = url.searchParams.get("ticket");
+    if (t !== null) {
+      this.props.dispatch(setUser({ name: "Justin", cip: "bruj3102", ticket: t }));
+      this.setState({
+        login: false,
+      });
+    }
   }
 
   handleProfileMenuOpen(event) {
@@ -43,12 +57,20 @@ class TopNav extends React.PureComponent {
   }
 
   handleProfileMenuClose(user) {
-    this.props.dispatch(setUser(user));
+    if (user.name !== undefined) {
+      this.props.dispatch(setUser(user));
+    }
 
     this.setState({
       anchorEl: null,
       open: false,
     });
+  }
+
+  handleLogin() {
+    const url = `${window.location.origin}/cas/`;
+    // window.location.replace("http://localhost:5002"); Use this for localhost
+    window.location.replace(url); // This is for production
   }
 
   render() {
@@ -79,9 +101,7 @@ class TopNav extends React.PureComponent {
           >
             <AccountCircle />
           </IconButton>
-          <Typography variant="h6">
-            {this.props.user.name}
-          </Typography>
+          {this.state.login ? <Button onClick={() => this.handleLogin()} className={classes.button}>Login</Button> : <Typography variant="h6"> {this.props.user.name}</Typography>}
           <Menu
             id="menu-appbar"
             anchorEl={this.state.anchorEl}
@@ -97,6 +117,7 @@ class TopNav extends React.PureComponent {
             open={this.state.open}
             onClose={this.handleProfileMenuClose}
           >
+            <MenuItem key="bruj3102" onClick={() => this.handleProfileMenuClose({ name: "Justin", cip: "bruj3102" })}>Justin</MenuItem>
             <MenuItem key="r2d21010" onClick={() => this.handleProfileMenuClose({ name: "R2-D2", cip: "rrdd2222" })}>R2-D2</MenuItem>
             <MenuItem key="chbc1000" onClick={() => this.handleProfileMenuClose({ name: "Chewbacca", cip: "chbc1000" })}>Chewbacca</MenuItem>
             <MenuItem key="yoda9999" onClick={() => this.handleProfileMenuClose({ name: "Yoda", cip: "yoda9999" })}>Yoda</MenuItem>

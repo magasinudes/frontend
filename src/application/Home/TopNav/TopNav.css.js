@@ -18,6 +18,9 @@ const styles = theme => ({
     marginRight: theme.spacing(1),
     marginLeft: "auto",
   },
+  button: {
+    color: "white",
+  },
 });
 
 export default styles;
